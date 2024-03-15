@@ -1,7 +1,54 @@
 {% extends "bootstrap.html.twig" %}
 
 {% block body %}
-<div class="container">
+
+<div class="container text-light">
+{# 1ère row*************************** #}
+  <div class="row ">
+
+  {# colonne investissement locatif #}
+  <div class="col col-lg-5 background-invest-loc background-commun">
+    <h3 class="titre-h3">investissement locatif</h3>
+      <input type="text" value="revenus complémentaires" class="btn-invest">
+  </div>
+
+  {# colonne placements #}
+  <div class="col col-lg-3  background-placements background-commun mb-2">
+    <h3 class="titre-h3 text-center padding-placements">placements</h3>
+      <h5 class="text-light text-center">SCPI</h5>
+      <input type="text" value="penser à ses proches" class="btn-placements mx-auto text-center">
+  </div>
+
+  
+  <div class="col col-lg-3 ">
+    {# colonne crédit #}
+    <div class="background-credit background-commun">
+        <h3 class="titre-h3 px-2">crédit</h3>
+        <h5 class="text-light px-2">Rachat</h5>
+        <input type="text" value="taux avantageux" class="btn-credit text-center mx-auto">
+    </div>
+    {# colonne parrainage #}
+    <div class="background-parrainage background-commun mt-3">
+        <input type="text" value="recevez 500€" class="btn-parrainage mx-auto text-center">
+      <h3 class="titre-h3 text-center mt-5">parrainage</h3>
+    </div>
+  </div> 
+
+  </div>
+{# fin de la 1ère row ******** #}
+
+{### début 2ème row ###}
+<div class="row">
+  <div class="col background-impots background-commun">
+    <h3 class="titre-h3">réduction d'impôts</h3>
+    <h5>Loi Pinel</h5>
+    <input type="text" value="fructifier ses impôts">
+  </div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+
 
 </div>
 

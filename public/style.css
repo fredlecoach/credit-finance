@@ -1,0 +1,138 @@
+/* *************réglage page d'accueil*************** */
+
+/* réglages commun */
+@keyframes anim {
+  from {scale:  1;}
+  to   {scale:  1.1;}
+}
+
+.background-commun:hover{
+  border: 2px solid rgb(107, 248, 248);
+  animation: anim 0.5s linear forwards;
+}
+
+.btn-invest{
+  background-color: #fff;
+  border: 1px solid rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
+  border-radius: 30px;
+  font-weight: 500;
+  position: relative;
+  top: 125px;
+  padding: 0 10px 3px 10px;
+}
+/* .btn-invest:hover{
+  background-color: rgb(0, 0, 0);
+  border: 1px solid #000000;
+  color: rgb(255, 255, 255);
+} */
+
+.titre-h3{
+  font-weight:bold;
+  padding: 10px 0;
+  text-transform: uppercase; 
+}
+
+/* investissement locatif */
+.background-invest-loc{
+  background-image: url("images/invest-locatif.jpg");
+  border-radius: 20px;
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+/* placements */
+
+.background-placements{
+  background-image: url("images/placements.jpg");
+  border-radius: 20px;
+  height: 400px;
+  background-position: center;
+  background-size: cover;
+  margin-left: 10px;
+}
+
+.btn-placements{
+  background-color: #fff;
+  border: 1px solid rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
+  border-radius: 30px;
+  font-weight: 500;
+  position: relative;
+  top: 175px;
+  display: flex;
+  justify-content: center;
+  padding: 0 10px 3px 10px;
+}
+/* .btn-placements:hover{
+  background-color: rgb(0, 0, 0);
+  border: 1px solid #000000;
+  color: rgb(255, 255, 255);
+} */
+
+.padding-placements{
+  padding-top: 100px
+}
+
+/* crédit */
+
+.background-credit{
+  background-image: url("images/credit-rachat.jpg");
+  border-radius: 20px;
+  height: 190px;
+  background-position: center;
+  background-size: cover;
+}
+
+.btn-credit{
+  background-color: #fff;
+  border: 1px solid rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
+  border-radius: 30px;
+  font-weight: 500;
+  position: relative;
+  top: 55px;
+  padding: 0 10px 3px 10px;
+  display: flex;
+  justify-content: center;
+}
+/* .btn-credit:hover{
+  background-color: rgb(0, 0, 0);
+  border: 1px solid #000000;
+  color: rgb(255, 255, 255);
+} */
+
+/* parrainage */
+
+.background-parrainage{
+  background-image: url("images/piggy-bank-2889042_1280.jpg");
+  border-radius: 20px;
+  height: 190px;
+  background-position: center;
+  background-size: cover;
+}
+
+.btn-parrainage {
+  background-color: #fff;
+  border: 1px solid rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
+  border-radius: 30px;
+  font-weight: 500;
+  position: relative;
+  padding: 0 10px 3px 10px;
+  display: flex;
+  justify-content: center; 
+  top: 55px ; 
+}
+/* css 2ème row */
+.background-impots{
+  background-image: url("images/money-2724235_1280.jpg");
+  border-radius: 20px;
+  height: 190px;
+  background-position: center;
+  background-size: cover;
+
+}
