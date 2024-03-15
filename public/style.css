@@ -8,6 +8,7 @@
 
 .background-commun:hover{
   border: 2px solid rgb(107, 248, 248);
+  box-shadow: 0px 0px 50px rgba(107, 248, 248, 0.5);
   animation: anim 0.5s linear forwards;
 }
 
@@ -115,6 +116,10 @@
   background-size: cover;
 }
 
+.background-parrainage h3{
+  margin-top: 90px;
+}
+
 .btn-parrainage {
   background-color: #fff;
   border: 1px solid rgb(0, 0, 0);
@@ -125,7 +130,7 @@
   /* padding: 0 10px 3px 10px; */
   display: flex;
   justify-content: center; 
-  top: 55px ; 
+  top: 35px ; 
 }
 /******************** css 2ème row *****************/
 
@@ -146,6 +151,7 @@
   height: 290px;
   background-position: center;
   background-size: cover;
+  margin-left: 10px;
 }
 .btn-simulation{
   display: flex;
@@ -156,7 +162,6 @@
   color: rgb(0, 0, 0);
   border-radius: 30px;
   font-weight: 500;
-  position: relative;
  
 }
 
