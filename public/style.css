@@ -18,7 +18,7 @@
   border-radius: 30px;
   font-weight: 500;
   position: relative;
-  top: 125px;
+  top: 10px;
   padding: 0 10px 3px 10px;
 }
 /* .btn-invest:hover{
@@ -37,7 +37,7 @@
 .background-invest-loc{
   background-image: url("images/invest-locatif.jpg");
   border-radius: 20px;
-  height: 250px;
+  height: 400px;
   background-position: center;
   background-size: cover;
 }
@@ -122,17 +122,52 @@
   border-radius: 30px;
   font-weight: 500;
   position: relative;
-  padding: 0 10px 3px 10px;
+  /* padding: 0 10px 3px 10px; */
   display: flex;
   justify-content: center; 
   top: 55px ; 
 }
-/* css 2ème row */
+/******************** css 2ème row *****************/
+
+/* impots */
 .background-impots{
   background-image: url("images/money-2724235_1280.jpg");
   border-radius: 20px;
-  height: 190px;
+  height: 290px;
   background-position: center;
   background-size: cover;
-
 }
+
+/* simuation */
+
+.background-simulation{
+  background-image: url("images/success-6595539_1280.png");
+  border-radius: 20px;
+  height: 290px;
+  background-position: center;
+  background-size: cover;
+}
+.btn-simulation{
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  background-color: #fff;
+  border: 1px solid rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
+  border-radius: 30px;
+  font-weight: 500;
+  position: relative;
+ 
+}
+
+/* residence principale */
+
+.background-proprietaire{
+  background-image: url("images/batiment-haussmanien.jpg");
+  border-radius: 20px;
+  height: 290px;
+  background-position: center;
+  background-size: cover;
+}
+
+
