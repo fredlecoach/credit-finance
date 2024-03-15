@@ -11,4 +11,8 @@ class HomeController extends AbstractController{
     return $this->render('front/home.html.twig');
   }
 
+  #[Route("/investissement_locatif", name:"investissement_locatif")]
+  public function investissement() {
+    return $this->render("front/investissement.html.twig");
+  }
 }
