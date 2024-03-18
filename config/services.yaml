@@ -22,3 +22,11 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+# config/services.yaml
+
+# configurer le lien actif de la page:
+    App\Twig\AppExtension:
+        arguments: ['@request_stack']
+        tags:
+            - { name: twig.extension }
