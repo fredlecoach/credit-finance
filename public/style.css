@@ -187,15 +187,13 @@
 /* ************** PAGE INVESTISSEMENT LOCATIF ************** */
 /* couleur générale des boutons */
 .bouton{
-  border: 2px solid rgb(96, 217, 217) ;
-  background-color: #fff;
-  color: rgb(96, 217, 217);
-  border-radius: 10px;
+  background-color: rgb(96, 217, 217);
+  color: #fff;
   box-shadow: 0 5px 5px rgba(94, 90, 90, 0.5);
 }
 .bouton:hover{
-  color: #fff;
-  background-color: rgb(96, 217, 217);
+  color: #000;
+  background-color: rgb(43, 100, 100);
 }
 
 /* contour du fond blanc des pages */
@@ -208,6 +206,10 @@
 /* couleur des titres principaux des pages */
 .color-title{
   color: rgb(96, 217, 217);
+}
+
+.accompagnement{
+  color: rgb(159, 97, 216);
 }
 
 @keyframes apparition {

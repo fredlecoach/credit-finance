@@ -2,14 +2,14 @@
 <nav class="navbar navbar-expand-lg container navbar-dark d-flex">
 <span class="navbar-brand"><img src="images/logo_credit-finance.png" alt="logo" style="width:9em"></span>
 <ul class="navbar-nav mx-auto">
-  <li class="nav-item px-2"><a href="{{path("home")}}" class="nav-link">Home</a></li>
+  <li class="nav-item px-2"><a href="{{path("home")}}" class="{% if app.request.attributes.get('_route') == 'home' %} active {% endif %} nav-link">Home</a></li>
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
       Immobilier
     </a>
       <ul class="dropdown-menu">
         <li><a class="dropdown-item" href="#">Résidence principale</a></li>
-        <li><a class="dropdown-item" href="{{path("investissement_locatif")}}">Investissement locatif</a></li>
+        <li><a class="dropdown-item" href="{{path("investissement_locatif")}}" class="{% if app.request.attributes.get('_route') == 'investissement_locatif' %} active {% endif %} nav-link">Investissement locatif</a></li>
       </ul>
   </li>
   <li class="nav-item dropdown">
