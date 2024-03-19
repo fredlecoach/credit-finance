@@ -8,7 +8,7 @@
       Immobilier
     </a>
       <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Résidence principale</a></li>
+        <li><a class="dropdown-item" href="{{path("residence_principale")}}" class="{% if app.request.attributes.get('_route') == 'residence_principale' %} active {% endif %} navlink">Résidence principale</a></li>
         <li><a class="dropdown-item" href="{{path("investissement_locatif")}}" class="{% if app.request.attributes.get('_route') == 'investissement_locatif' %} active {% endif %} nav-link">Investissement locatif</a></li>
       </ul>
   </li>
