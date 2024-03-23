@@ -18,10 +18,10 @@ class HomeController extends AbstractController{
     return $this->render("front/investissement.html.twig");
   }
 
-  #[Route("/residence_principale", name:"residence_principale")]
-  public function rp(LogementsRepository $logementsRepository) : Response {
-    // On récupère les logements de type résidence principale
-    $logements = $logementsRepository->findAll();
-    return $this->render("front/residence_principale.html.twig", ["logements" => $logements]);
-  }
+  // #[Route("/residence_principale", name:"residence_principale")]
+  // public function rp(LogementsRepository $logementsRepository) : Response {
+  //   // On récupère les logements de type résidence principale
+  //   $logements = $logementsRepository->findAll();
+  //   return $this->render("front/residence_principale.html.twig", ["logements" => $logements]);
+  // }
 }

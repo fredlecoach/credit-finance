@@ -1,0 +1,115 @@
+{% extends "bootstrap.html.twig" %}
+
+{% block body %}
+
+
+  <div class="container contour bg-light">
+  <h1 class="display-5 text-center text-uppercase mt-3"  id="retour">Notre parc immobilier</h1>
+  <h5 class="color-title text-center">Votre futur patrimoine</h5>
+  
+    
+    <div class="row mb-3 mt-5 py-3 justify-content-center bg-secondary-subtle">
+      <div class="col-4">
+          <form action="" method="get">
+
+          <label for="ville" class="fw-bold">Ville</label>
+          <input type="text" name="ville" id="ville" placeholder="nom de la ville" class="form-control">
+  
+          <label for="superficie" id="surface" class="my-1 fw-bold">Superficie (m²) : </label>
+          <input type="number" class="form-control">
+               
+          <label class="fw-bold mt-1">Type d logement(s) recherché(s) : </label>
+            <ul class="list-unstyled">
+              <li>
+                <input type="checkbox" name="appartement" id="appartement" checked>
+                <label for="appartement">appartement</label>
+              <li>
+                <input type="checkbox" name="duplex" id="duplex">
+                <label for="duplex">duplex</label>
+              </li>
+              <li>
+                <input type="checkbox" name="maison" id="maison">
+                <label for="maison">maison</label>
+              </li>
+              <li>
+                <input type="checkbox" name="studio" id="studio">
+                <label for="studio">studio</label>
+              </li>
+              <li>
+                <input type="checkbox" name="villa" id="villa">
+                <label for="villa">villa</label>
+              </li>
+            </ul>
+      </div>
+
+      <div class="col-4">
+          
+          <label for="loyer" class="fw-bold">Loyer perçus</label>
+          <input type="number" name="loyer" id="loyer" class="form-control" min="500" step="50" placeholder="/mois">
+          
+          <label for="rentabilité" class="fw-bold">Rentabilité</label>
+          <input type="number" class="form-control" placeholder="%">
+           
+          <label for="prix" id="prixAffiche" class="fw-bold">Budget d'achat : </label>
+          <input type="number" name="prix" id="prix" min="30000" max="10000000" step="5000" class="form-control" placeholder="100000 €">
+
+          <div class="d-flex justify-content-end">
+            <input type="submit" value="Rechercher" class="btn btn-info mt-3">
+          </div>
+          
+      </div>
+      
+      
+      </form>
+    </div>
+      
+   
+    
+  
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-5 p-3">
+    {% for key, value in habitation %}
+
+      <div class="col">
+        <div class="card h-100 anim background-commun">
+          <img src= {{value.image}} class="card-img-top w-100" alt="...">
+          <div class="card-body">
+            <a href="" class="btn btn-info w-100" >Découvrir</a>
+            <div class="card-text">
+              <div class="row">
+                <div class="col-4"><strong>Lieu :</strong></div>
+                <div class="col text-capitalize"> {{value.ville}} </div>
+              </div>
+              <div class="row">
+                <div class="col-4"><strong>Type :</strong></div>
+                <div class="col text-capitalize"> {{value.type}} </div>
+              </div>
+              <div class="row">
+                <div class="col-4"><strong>Surface :</strong> </div>
+                <div class="col"> {{value.surface}} m2</div>
+              </div>
+              <div class="row">
+                <div class="col-4"><strong>Prix :</strong></div>
+                <div class="col"> {{value.prix}} €</div>
+              </div>
+              <div class="row">
+                <div class="col-4"><strong>Loyer :</strong></div>
+                <div class="col"> {{value.loyer}} € / mois</div>
+              </div>
+              <div class="row">
+                <div class="col-4"><strong>Rentabilité :</strong></div>
+                <div class="col"> {{value.Rentabilite}} % / an</div>
+              </div>
+            </div>
+          </div>
+          {# <div class="card-footer">
+            <small class="text-body-secondary">Date de parution : {{value.date_creation}} </small>
+          </div> #}
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+   </div>   
+
+{% endblock %}
+

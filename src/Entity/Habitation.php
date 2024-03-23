@@ -2,12 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\LogementsRepository;
+use App\Repository\HabitationRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: LogementsRepository::class)]
-class Logements
+#[ORM\Entity(repositoryClass: HabitationRepository::class)]
+class Habitation
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -16,6 +16,12 @@ class Logements
 
     #[ORM\Column(length: 100)]
     private ?string $ville = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $adresse = null;
+
+    #[ORM\Column]
+    private ?int $code_postal = null;
 
     #[ORM\Column(length: 50)]
     private ?string $type = null;
@@ -31,6 +37,9 @@ class Logements
 
     #[ORM\Column]
     private ?int $rentabilite = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $image = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date_creation = null;
@@ -48,6 +57,30 @@ class Logements
     public function setVille(string $ville): static
     {
         $this->ville = $ville;
+
+        return $this;
+    }
+
+    public function getAdresse(): ?string
+    {
+        return $this->adresse;
+    }
+
+    public function setAdresse(string $adresse): static
+    {
+        $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    public function getCodePostal(): ?int
+    {
+        return $this->code_postal;
+    }
+
+    public function setCodePostal(int $code_postal): static
+    {
+        $this->code_postal = $code_postal;
 
         return $this;
     }
@@ -108,6 +141,18 @@ class Logements
     public function setRentabilite(int $rentabilite): static
     {
         $this->rentabilite = $rentabilite;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): static
+    {
+        $this->image = $image;
 
         return $this;
     }
