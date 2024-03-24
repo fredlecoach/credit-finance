@@ -81,4 +81,23 @@ class HabitationController extends AbstractController
             'tranche_prix' => $tranchePrix
         ]);
     }
+
+    #[Route("/modifier", name: "modifier")]
+    public function modifierHabitation( int $id , HabitationRepository $habitationRepository ,Request $request , EntityManagerInterface $em){
+        $habitation = $habitationRepository->findOneBy([ "id" => $id ]);
+  $form = $this->createForm(HabitationType::class , $habitation , ["label" => "modifier"]);
+  $form->handleRequest($request) ; 
+  if($form->isSubmitted() && $form->isValid()){
+      $em->persist($habitation); 
+      $em->flush();   
+      return $this->redirectToRoute("gestionHabitation");
+  }
+  return $this->render("userAdmin/modifierHabitation.html.twig", ["form" => $form]);
+}
+
+    #[Route("/gestion", name: "gestion")]
+    public function gestionHabitation( HabitationRepository $habitationRepository) : Response{
+    $habitation = $habitationRepository->findAll() ;
+    return $this->render("habitationAdmin/gestionHabitation.html.twig", ["habitation" => $habitation]);
+    }
 }
