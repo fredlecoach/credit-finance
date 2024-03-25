@@ -8,7 +8,7 @@
       Immobilier
     </a>
       <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="{{path("residence_principale")}}" class="{% if app.request.attributes.get('_route') == 'residence_principale' %} active {% endif %} navlink">Résidence principale</a></li>
+        <li><a class="dropdown-item" href="{{path("parc_immobilier")}}" class="{% if app.request.attributes.get('_route') == 'parc_immobilier' %} active {% endif %} navlink">Notre Parc immobilier</a></li>
         <li><a class="dropdown-item" href="{{path("investissement_locatif")}}" class="{% if app.request.attributes.get('_route') == 'investissement_locatif' %} active {% endif %} nav-link">Investissement locatif</a></li>
       </ul>
   </li>
@@ -36,13 +36,13 @@
   <li class="nav-item px-2">
     <a href="{{path("gestion")}}" class="nav-link">gestion</a>
   </li>
-  <li class="nav-item px-2">
+  {# <li class="nav-item px-2">
     <a href="{{path("ajout_habitation")}}" class="nav-link">ajouter</a>
   </li>
   </li>
   <li class="nav-item px-2">
   <a href="{{path("modifier")}}" class="nav-link">modifier</a>
-  </li>
+  </li> #}
 </ul>
 </nav>
 

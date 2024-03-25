@@ -7,10 +7,10 @@
 <div class="row ">
 
   {# colonne investissement locatif #}
-  <div class="col col-lg-5 background-invest-loc background-commun">
+  <a href="{{path("investissement_locatif")}}" class="col col-lg-5 background-invest-loc background-commun text-decoration-none text-light">
     <h3 class="titre-h3">investissement locatif</h3>
       <button class="btn-invest">Revenus complémentaires</button>
-  </div>
+  </a>
 
   {# colonne placements #}
   <div class="col col-lg-3  background-placements background-commun mb-2 text-center">
@@ -53,13 +53,14 @@
   </div>
 
   
-  <div class="col col-lg-5 ">
-    {# colonne crédit #}
+  <a href="{{path("parc_immobilier")}}" class="col col-lg-5 text-light text-decoration-none">
+    {# colonne parc immobilier #}
     <div class="background-proprietaire background-commun text-center">
-    <h3 class="titre-h3">résidence principale</h3>
-    <h5>Achat - Location</h5>
-    <button class="text-center btn-invest mt-5">Devenir propriétaire</button>
-</div>
+      <h3 class="titre-h3">notre parc immobilier</h3>
+      <h5>Achat - Location</h5>
+      <button class="text-center btn-invest mt-5">Devenir propriétaire</button>
+    </div>
+  </a>
 
 </div>
 

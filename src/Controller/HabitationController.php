@@ -21,11 +21,11 @@ class HabitationController extends AbstractController
     //     ]);
     // }
 
-    #[Route("/residence_principale", name:"residence_principale")]
+    #[Route("/parc_immobilier", name:"parc_immobilier")]
     public function rp(HabitationRepository $habitationRepository) : Response {
       // On récupère les logements de type résidence principale
       $habitation = $habitationRepository->findAll();
-      return $this->render("habitation/residence_principale.html.twig", ["habitation" => $habitation]);
+      return $this->render("habitation/parc_immobilier.html.twig", ["habitation" => $habitation]);
     }
     
 // *************************************************************************************************
@@ -81,24 +81,35 @@ class HabitationController extends AbstractController
             'tranche_prix' => $tranchePrix
         ]);
     }
-
-    #[Route("/modifier", name: "modifier")]
-    public function modifierHabitation( int $id , HabitationRepository $habitationRepository ,Request $request , EntityManagerInterface $em){
-        $habitation = $habitationRepository->findOneBy([ "id" => $id ]);
-  $form = $this->createForm(HabitationType::class , $habitation , ["label" => "modifier"]);
-  $form->handleRequest($request) ; 
-  if($form->isSubmitted() && $form->isValid()){
-      $em->persist($habitation); 
-      $em->flush();   
-      return $this->redirectToRoute("gestionHabitation");
-  }
-  return $this->render("userAdmin/modifierHabitation.html.twig", ["form" => $form]);
-}
-
+// ************GESTION**************************
     #[Route("/gestion", name: "gestion")]
     public function gestionHabitation( HabitationRepository $habitationRepository) : Response{
     $habitation = $habitationRepository->findAll() ;
     return $this->render("habitation/gestionHabitation.html.twig", ["habitation" => $habitation]);
     }
-}
 
+
+    //  MODIFIER *********************************************
+    #[Route("/modifier/{id}", name: "modifier")]
+    public function modifierHabitation( int $id , HabitationRepository $habitationRepository ,Request $request , EntityManagerInterface $em){
+        $habitation = $habitationRepository->findOneBy([ "id" => $id ]);
+    $form = $this->createForm(HabitationType::class , $habitation , ["label" => "modifier"]);
+    $form->handleRequest($request) ; 
+    if($form->isSubmitted() && $form->isValid()){
+        $em->persist($habitation); 
+        $em->flush();   
+        return $this->redirectToRoute("gestion");//=>path du menu ou le "name" de la route = gestion
+    }
+    return $this->render("habitation/modifierHabitation.html.twig", ["form" => $form]);
+    }
+
+    // **SUPPRIMER****************************************
+    #[Route("/supprimer/{id}",name:"supprimer")]
+    public function suppressionHabitation (EntityManagerInterface $em, HabitationRepository $hr, int $id):Response{
+    $habitation = $hr->findOneBy(["id" => $id]);
+    $em->remove($habitation);
+    $em->flush();
+    return $this->redirectToRoute("gestion");//correspond au path du menu header
+
+    }
+}
