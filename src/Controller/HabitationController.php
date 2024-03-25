@@ -98,6 +98,7 @@ class HabitationController extends AbstractController
     #[Route("/gestion", name: "gestion")]
     public function gestionHabitation( HabitationRepository $habitationRepository) : Response{
     $habitation = $habitationRepository->findAll() ;
-    return $this->render("habitationAdmin/gestionHabitation.html.twig", ["habitation" => $habitation]);
+    return $this->render("habitation/gestionHabitation.html.twig", ["habitation" => $habitation]);
     }
 }
+

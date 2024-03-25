@@ -19,6 +19,10 @@ class HabitationType extends AbstractType
             ->add('adresse', TextType::class, ['attr' => ["class" => "form-control",
                                                           "placeholder" => "n°, rue, avenue"]])
             ->add('code_postal', NumberType::class, ['attr'=> ["class"=> 'form-control']])
+            ->add('departement', TextType::class, ['attr' => ["class" => "form-control", 
+                                                              "placeholder"=> "val de marne"]])
+            ->add('numero_departement', NumberType::class, ['attr' => ["class" => "form-control",
+                                                            "placeholder" => "94"]])
             ->add('type', TextType::class, ['attr' => ["class" => "form-control",
                                                        "placeholder"=>"appartement, maison, duplex, studio"]]) 
             ->add('surface', NumberType::class, ['attr'=> ["class"=> 'form-control']])

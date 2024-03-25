@@ -1,5 +1,53 @@
 {% extends "bootstrap.html.twig" %}
 
+{% block title %}Gestion Habitation {% endblock %}
+
 {% block body %}
+
+  <h1 class="display-5 text-center mt-3 mb-3">Gestionnaire d'Habitation'</h1>
+
+  <table class="table text-center border ">
+    <thead class="text-capitalize ">
+      <td class="fw-bold border bg-light text-uppercase">#</td>
+      <td class="fw-bold border bg-light text-uppercase">image</td>
+      <td class="fw-bold border bg-light text-uppercase">Département</td>
+      {# <td class="fw-bold border bg-light text-uppercase">Code postal</td> #}
+      <td class="fw-bold border bg-light text-uppercase">Ville</td>
+      <td class="fw-bold border bg-light text-uppercase">type</td>
+      <td class="fw-bold border bg-light text-uppercase">surface</td>
+      <td class="fw-bold border bg-light text-uppercase">prix</td>
+      <td class="fw-bold border bg-light text-uppercase">loyer</td>
+      {# <td class="fw-bold border bg-light text-uppercase">rentabilité</td> #}
+      {# <td class="fw-bold border bg-light text-uppercase">date de création</td> #}
+    </thead>
+    <tbody> 
+      {% for key, value in habitation %}
+        <tr>
+          <th class="fw-bold bg-light text-capitalize"> {{value.id}}  </th>
+          <td class="bg-light"><img src="{{value.image}}" alt="range rover" class="w-100 img-fluid object-fit-cover" style="height:100px"></td>
+          <td> {{value.departement}} </td>
+          {# <td>{{value.code_postal}}</td> #}
+          <td>{{value.ville}}</td>
+          <th class="fw-bold bg-light text-capitalize"> {{value.type}} </th>
+          <th class="fw-bold bg-light text-capitalize"> {{value.surface}} </th>
+          <th class="fw-bold bg-light text-capitalize"> {{value.prix}} </th>
+          <th class="fw-bold bg-light text-capitalize"> {{value.loyer}} </th>
+          {# <th class="fw-bold bg-light text-capitalize"> {{value.rentabilité}} </th> #}
+          {# <th class="fw-bold bg-light text-capitalize"> {{value.date_creation}} </th> #}
+          {# <td>
+            {# <a href="{{path("modifierHabitation",  {id : value.id }) }}"><input type="submit" value="modifier" class="btn btn-outline-warning my-2" style="width:100px"><br></a> #}
+
+            {# <a href="{{path("supprimerHabitation",  {id : value.id }) }}"><input type="submit" value="supprimer" class="btn btn-outline-danger my-2" style="width:100px"><br></a>
+          </td> #} 
+        </tr>
+      {% endfor %}
+    </tbody>
+    <tfoot>
+      <tr>
+        <td class="fw-bold ">Ajouter un véhicule</td>
+        <td><a href="{{ path("ajout_habitation") }}"><input type="submit" value="ajouter" class="btn btn-outline-success mb-1" style="width:100px"></a></td>
+      </tr>
+    </tfoot>
+  </table>
 
 {% endblock %}

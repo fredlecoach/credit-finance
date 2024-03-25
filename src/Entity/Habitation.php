@@ -44,6 +44,12 @@ class Habitation
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date_creation = null;
 
+    #[ORM\Column(length: 100)]
+    private ?string $departement = null;
+
+    #[ORM\Column]
+    private ?int $numero_departement = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -165,6 +171,30 @@ class Habitation
     public function setDateCreation(\DateTimeInterface $date_creation): static
     {
         $this->date_creation = $date_creation;
+
+        return $this;
+    }
+
+    public function getDepartement(): ?string
+    {
+        return $this->departement;
+    }
+
+    public function setDepartement(string $departement): static
+    {
+        $this->departement = $departement;
+
+        return $this;
+    }
+
+    public function getNumeroDepartement(): ?int
+    {
+        return $this->numero_departement;
+    }
+
+    public function setNumeroDepartement(int $numero_departement): static
+    {
+        $this->numero_departement = $numero_departement;
 
         return $this;
     }
