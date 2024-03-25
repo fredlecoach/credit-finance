@@ -15,21 +15,21 @@ class HabitationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('ville', TextType::class, ['attr' => ["class" => "form-control"]])
-            ->add('adresse', TextType::class, ['attr' => ["class" => "form-control",
+            ->add('ville', TextType::class, ['attr' => ["class" => "form-control mb-2"]])
+            ->add('adresse', TextType::class, ['attr' => ["class" => "form-control mb-2",
                                                           "placeholder" => "n°, rue, avenue"]])
-            ->add('code_postal', NumberType::class, ['attr'=> ["class"=> 'form-control']])
-            ->add('departement', TextType::class, ['attr' => ["class" => "form-control", 
+            ->add('code_postal', NumberType::class, ['attr'=> ["class"=> 'form-control mb-2']])
+            ->add('departement', TextType::class, ['attr' => ["class" => "form-control mb-2", 
                                                               "placeholder"=> "val de marne"]])
-            ->add('numero_departement', NumberType::class, ['attr' => ["class" => "form-control",
+            ->add('numero_departement', NumberType::class, ['attr' => ["class" => "form-control mb-2",
                                                             "placeholder" => "94"]])
-            ->add('type', TextType::class, ['attr' => ["class" => "form-control",
+            ->add('type', TextType::class, ['attr' => ["class" => "form-control mb-2",
                                                        "placeholder"=>"appartement, maison, duplex, studio"]]) 
-            ->add('surface', NumberType::class, ['attr'=> ["class"=> 'form-control']])
-            ->add('prix', NumberType::class, ['attr'=> ["class"=> 'form-control']])
-            ->add('loyer', NumberType::class, ['attr'=> ["class"=> 'form-control']])
-            ->add('rentabilite', NumberType::class, ['attr'=> ["class"=> 'form-control']])
-            ->add('image', TextType::class, ['attr' => ["class" => "form-control"],
+            ->add('surface', NumberType::class, ['attr'=> ["class"=> 'form-control mb-2']])
+            ->add('prix', NumberType::class, ['attr'=> ["class"=> 'form-control mb-2']])
+            ->add('loyer', NumberType::class, ['attr'=> ["class"=> 'form-control mb-2']])
+            ->add('rentabilite', NumberType::class, ['attr'=> ["class"=> 'form-control mb-2']])
+            ->add('image', TextType::class, ['attr' => ["class" => "form-control mb-2"],
                                              'data' => "images/"])
             ->add('date_creation', null, ['attr'=> ["class"=>  'form-control'],
                 'widget' => 'single_text',

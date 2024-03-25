@@ -30,21 +30,7 @@ class HabitationController extends AbstractController
     
 // *************************************************************************************************
 
-    #[Route("ajout_habitation", name: "ajout_habitation")]
-    public function ajouter( Request $request, EntityManagerInterface $em){
-  
-        $habitation = new Habitation();
-        $form = $this->createForm(HabitationType::class, $habitation);
-        
-        $form->handleRequest($request);
-      
-        if($form->isSubmitted() && $form->isValid()){
-          $em->persist($habitation);
-          $em->flush();
-          return $this->redirectToRoute("ajout_habitation");
-        }
-      return $this->render("habitation/ajout_habitation.html.twig", ["form" => $form]);//renvoie vers le dossier new.html
-      }
+   
 
     // réglage des barres de prix
     // #[Route('/ajout_habitation', name: "ajout_habitation")]
@@ -87,6 +73,23 @@ class HabitationController extends AbstractController
     $habitation = $habitationRepository->findAll() ;
     return $this->render("habitation/gestionHabitation.html.twig", ["habitation" => $habitation]);
     }
+
+    // ***ajouter***********
+    #[Route("ajout_habitation", name: "ajout_habitation")]
+    public function ajouter( Request $request, EntityManagerInterface $em){
+  
+        $habitation = new Habitation();
+        $form = $this->createForm(HabitationType::class, $habitation);
+        
+        $form->handleRequest($request);
+      
+        if($form->isSubmitted() && $form->isValid()){
+          $em->persist($habitation);
+          $em->flush();
+          return $this->redirectToRoute("ajout_habitation");
+        }
+      return $this->render("habitation/ajout_habitation.html.twig", ["form" => $form]);//renvoie vers le dossier new.html
+      }
 
 
     //  MODIFIER *********************************************
