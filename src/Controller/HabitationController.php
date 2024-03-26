@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Habitation;
 use App\Form\HabitationType;
+use App\Entity\FormulaireRecherche;
+use App\Repository\FormulaireRechercheRepository;
 use App\Repository\HabitationRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,44 +31,29 @@ class HabitationController extends AbstractController
     }
     
 // *************************************************************************************************
+#[route("/rechercher", name: "rechercher")]
+public function search(Request $request, FormulaireRechercheRepository $formulaireRechercheRepository)   : Response 
+{
+    $departement = $request->query->get('departement');
+    $type = $request->query->get('type');
+    $surfaceMin = $request->query->get('surfaceMin');
+    $prixMin = $request->query->get('prixMin');
+    $prixMax = $request->query->get('prixMax');
+    $loyerMin = $request->query->get('loyerMin');
+    $loyerMax = $request->query->get('loyerMax');
+    $rentabiliteMin = $request->query->get('rentabiliteMin');
+    // Récupérez d'autres critères de recherche depuis le formulaire
 
-   
+    $habitation = $this->getDoctrine()
+        ->getRepository(FormulaireRecherche::class)
+        ->findAppartementsByCriteria($prixMax, $departement, $type, $surfaceMin, $prixMin, $prixMax, $loyerMin, $loyerMax, $rentabiliteMin /*, autres critères */);
 
-    // réglage des barres de prix
-    // #[Route('/ajout_habitation', name: "ajout_habitation")]
-    public function afficherTranchePrix(Request $request): Response
-    {
-        $valeurPrix = $request->query->get('prix'); // Récupération de la valeur du curseur
+    return $this->render('recherche/resultatRecherche.html.twig', [
+        'habitation' => $habitation,
+    ]);
+}
 
-        // Détermination de la tranche de prix en fonction de la valeur du curseur
-        if ($valeurPrix < 51000) {
-            $tranchePrix = "30000 - 50000";
-        } else if ($valeurPrix < 71000) {
-            $tranchePrix = "50000 - 70000";
-        } else if ($valeurPrix < 101000) {
-            $tranchePrix = "70000 - 100000";
-        } else if ($valeurPrix < 151000) {
-            $tranchePrix = "100000 - 150000";
-        } else if ($valeurPrix < 201000) {
-            $tranchePrix = "150000 - 200000";
-        } else if ($valeurPrix < 251000) {
-            $tranchePrix = "200000 - 250000";
-        } else if ($valeurPrix < 301000) {
-            $tranchePrix = "250000 - 300000";
-        } else if ($valeurPrix < 351000) {
-            $tranchePrix = "300000 - 350000";
-        } else if ($valeurPrix < 401000) {
-            $tranchePrix = "350000 - 400000";
-        } else if ($valeurPrix < 501000) {
-            $tranchePrix = "450000 - 500000";
-        } else {
-            $tranchePrix = "+ 500000";
-        }
-
-        return $this->render('habitation/ajout_habitation.html.twig', [
-            'tranche_prix' => $tranchePrix
-        ]);
-    }
+  
 // ************GESTION**************************
     #[Route("/gestion", name: "gestion")]
     public function gestionHabitation( HabitationRepository $habitationRepository) : Response{

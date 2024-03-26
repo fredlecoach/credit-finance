@@ -1,0 +1,51 @@
+{% extends "bootstrap.html.twig" %}
+
+{% block title %}Nos Placements{% endblock %}
+
+{% block body %}
+
+<div class="container contour bg-light">
+  <h1 class="display-5 text-center text-capitalize mt-3">Nos Placements</h1>
+    <h5 class="color-title text-center text-uppercase">être prévoyant, c'est anticiper </h5>
+
+
+<div class="card-group container my-5">
+<div class="row row-cols-1 row-cols-lg-3" style="text-align:justify">
+  <div class="card col  background-commun">
+  <h4 class="text-center text-uppercase">scpi</h4>
+    <img src="images/building.jpg"  alt="scpi" style="height:300px;">
+    <div class="card-body">
+      <h5 class="card-title text-center border-bottom">L'immobilier sans ses contraintes</h5>
+      <p class="card-text"> Permettre à plusieurs investisseurs de regrouper leurs fonds pour acquérir et gérer des biens immobiliers.
+      </p>
+      <a href="{{path("scpi")}}"><input type="submit" value="En savoir plus" class="btn bouton"></a>
+    </div>
+  </div>
+  <div class="card col background-commun">
+  <h4 class="text-center text-uppercase">Assurance-Vie</h4>
+    <img src="images/main-sur-pied.jpg" class="card-img-top" alt="assurance vie" style="height:300px;">
+    <div class="card-body">
+      <h5 class="card-title text-center  border-bottom">Protéger ses proches</h5>
+      <p class="card-text">
+      Moyen d’épargne à moyen ou long terme qui permet de financer des projets, préparer sa retraite et transmettre son patrimoine.
+      </p>
+      <a href="{{path("assuranceVie")}}"><input type="submit" value="En savoir plus" class="btn bouton"></a>
+    </div>
+  </div>
+  <div class="card col  background-commun">
+  <h4 class="text-center text-uppercase">Défiscalisation</h4>
+    <img src="images/grand-building.jpg"  alt="defiscalisation" style="height:300px;">
+    <div class="card-body">
+      <h5 class="card-title text-center border-bottom">Devenir propriétaire grâce à ses impôts</h5>
+      <p class="card-text">Via la loi Pinel, Crédit & Finance permet aux particuliers d'investir leurs impôts sur le revenu en investissant dans des logements neufs.</p>
+     <a href="{{path("defiscalisation")}}"><input type="submit" value="En savoir plus" class="btn bouton"></a>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+{% endblock %}

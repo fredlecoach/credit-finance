@@ -1,10 +1,10 @@
 <header>
 <nav class="navbar navbar-expand-lg container navbar-dark d-flex">
-<span class="navbar-brand"><img src="images/logo_credit-finance.png" alt="logo" style="width:9em"></span>
+<span class="navbar-brand"><a href="{{path("home")}}"><img src="images/logo_credit-finance.png" alt="logo" style="width:9em"></a></span>
 <ul class="navbar-nav mx-auto">
   <li class="nav-item px-2"><a href="{{path("home")}}" class="{% if app.request.attributes.get('_route') == 'home' %} active {% endif %} nav-link">Home</a></li>
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle {% if app.request.attributes.get('_route') in ['parc_immobilier','investissement_locatif'] %} active {% endif  %}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
       Immobilier
     </a>
       <ul class="dropdown-menu">
@@ -13,12 +13,12 @@
       </ul>
   </li>
   <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle {% if app.request.attributes.get('_route') in ['reduction_impots','placements'] %} active {% endif  %}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
       Investissements
     </a>
       <ul class="dropdown-menu">
         <li><a class="dropdown-item" href="#">Réduction d'impôts</a></li>
-        <li><a class="dropdown-item" href="#">SCPI</a></li>
+        <li><a class="dropdown-item" href="{{path('placements')}}" class="{% if app.request.attributes.get('_route') == 'placements' %} active {% endif %} nav-link">Nos placements</a></li>
       </ul>
   </li>
   <li class="nav-item dropdown">
@@ -34,7 +34,7 @@
     <a href="" class="nav-link">Parrainage</a>
   </li>
   <li class="nav-item px-2">
-    <a href="{{path("gestion")}}" class="nav-link">gestion</a>
+    <a href="{{path("gestion")}}" class="{% if app.request.attributes.get('_route') == 'gestion' %} active {% endif %} nav-link">gestion</a>
   </li>
   {# <li class="nav-item px-2">
     <a href="{{path("ajout_habitation")}}" class="nav-link">ajouter</a>

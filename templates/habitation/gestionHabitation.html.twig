@@ -6,9 +6,16 @@
 <div class="container contour bg-light">
   <h1 class="display-5 text-center mt-3 mb-3" id="haut">Gestionnaire d'Habitation</h1>
 
+    <table style="position: sticky">
+      <tr>
+        <td class="fw-bold ">Ajouter une habitation</td>
+        <td><a href="{{ path("ajout_habitation") }}"><input type="submit" value="ajouter" class="btn btn-outline-success mb-1" style="width:100px" id="ajouter"></a></td>
+      </tr>
+    </table>
+
   <table class="table text-center border mb-5">
     <thead class="text-capitalize ">
-      <td class="fw-bold border bg-light text-uppercase">#</td>
+      {# <td class="fw-bold border bg-light text-uppercase">#</td> #}
       <td class="fw-bold border bg-light text-uppercase">image</td>
       <td class="fw-bold border bg-light text-uppercase">Département</td>
       {# <td class="fw-bold border bg-light text-uppercase">Code postal</td> #}
@@ -24,15 +31,15 @@
     <tbody> 
       {% for key, value in habitation %}
         <tr>
-          <th class="bg-light text-capitalize"> {{value.id}}  </th>
+          {# <th class="bg-light text-capitalize"> {{value.id}}  </th> #}
           <td><img src="{{value.image}}" alt="range rover" class="w-100 img-fluid object-fit-cover" style="height:100px"></td>
           <td class=" text-capitalize"> {{value.departement}} </td>
           {# <td>{{value.code_postal}}</td> #}
-          <td class=" text-capitalize fw-bold">{{value.ville}}</td>
+          <td class=" text-capitalize fw-bold border-bottom">{{value.ville}}</td>
           <td class=" text-capitalize"> {{value.type}} </td>
-          <td class=" text-capitalize"> {{value.surface}} </td>
-          <td class=" text-capitalize"> {{value.prix}} </td>
-          <td class=" text-capitalize"> {{value.loyer}} </td>
+          <td class=" text-capitalize border-bottom"> {{value.surface}} </td>
+          <td class=" text-capitalize fw-bold"> {{value.prix}} </td>
+          <td class=" text-capitalize border-bottom"> {{value.loyer}} </td>
           {# <th class="fw-bold bg-light text-capitalize"> {{value.rentabilité}} </th> #}
           {# <th class="fw-bold bg-light text-capitalize"> {{value.date_creation}} </th> #}
           <td>
@@ -43,12 +50,12 @@
         </tr>
       {% endfor %}
     </tbody>
-    <tfoot>
+    {# <tfoot>
       <tr>
         <td class="fw-bold ">Ajouter une habitation</td>
-        <td><a href="{{ path("ajout_habitation") }}"><input type="submit" value="ajouter" class="btn btn-outline-success mb-1" style="width:100px"></a></td>
+        <td><a href="{{ path("ajout_habitation") }}"><input type="submit" value="ajouter" class="btn btn-outline-success mb-1" style="width:100px" id="ajouter"></a></td>
       </tr>
-    </tfoot>
+    </tfoot> #}
   </table>
    <div class="d-flex justify-content-center">
       <a href="#haut"><i class="bi bi-arrow-up-circle-fill fs-2 arrow"></i></a>

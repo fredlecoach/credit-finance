@@ -1,0 +1,97 @@
+{% extends "bootstrap.html.twig" %}
+
+{% block title %}Nos Placements{% endblock %}
+
+{% block body %}
+
+<div class="container contour bg-light">
+  <h1 class="display-5 text-center text-capitalize mt-3">Assurance-Vie</h1>
+    <h5 class="color-title text-center text-uppercase">Préparer son futur et protéger ses proches</h5>
+
+    <div>
+      <img src="images/bebe.jpg" alt="scpi"  class="img-fluid w-100 object-fit-cover" style="height:425px;">
+    </div>
+
+    <div class="accordion mb-5" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header ">
+      <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Définition :
+
+
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <p>Une assurance-vie est un moyen d’épargne à moyen ou long terme.</p>
+        <p>Elle permet de financer des projets, de préparer la retraite et de transmettre son patrimoine.</p>
+        <p>Elle offre une fiscalité allégée, une transmission du capital et une liberté de choix des bénéficiaires.</p>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed  fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Types de Contrats :
+
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <p>Il existe plusieurs types de contrats d’assurance-vie :
+        <ul>
+          <li><strong>Contrat en cas de vie :</strong> Vous épargnez et récupérez le capital à une date déterminée. </li>
+          <li><strong>Contrat en cas de décès :</strong> En cas de décès, le capital est versé aux bénéficiaires désignés.</li>
+          <li><strong>Contrat mixte (vie et décès) :</strong> Combinant les deux précédents</li>
+        </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed  fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Fiscalité :
+
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <p>Les gains réalisés sur un contrat d’assurance-vie sont soumis à une fiscalité avantageuse.
+        Vous bénéficiez d’un abattement sur l’impôt sur le revenu :
+          <ul>
+            <li><strong>4 600 €</strong> pour une personne seule</li>
+            <li><strong>9 200 €</strong> en cas d’imposition commune ou d’un prélèvement libératoire au taux réduit de 7,5 %</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+        Modalités de Réclamation :
+
+
+      </button>
+    </h2>
+    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <p>Si vous êtes bénéficiaire d’un contrat d’assurance-vie, vous pouvez réclamer les fonds auprès de l’assureur.</p>
+        <p>En cas de décès du titulaire, les bénéficiaires doivent se manifester pour percevoir le capital.</p>
+        <p>L’assurance-vie est un moyen d’épargne flexible et avantageux, adapté à différents objectifs financiers.</p>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    <input type="submit" value="Nous contacter" class="btn bouton mt-3 col-4 fs-5">
+  </div>
+</div>
+
+
+
+
+</div>
+
+
+{% endblock %}

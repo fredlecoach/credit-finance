@@ -24,4 +24,9 @@ class HomeController extends AbstractController{
   //   $logements = $logementsRepository->findAll();
   //   return $this->render("front/residence_principale.html.twig", ["logements" => $logements]);
   // }
+
+  #[Route("/placements", name:"placements")]
+  public function placements(){
+    return $this->render("front/placements.html.twig");
+  }
 }
