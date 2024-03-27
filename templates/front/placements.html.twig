@@ -11,34 +11,39 @@
 
 <div class="card-group container my-5">
 <div class="row row-cols-1 row-cols-lg-3" style="text-align:justify">
-  <div class="card col  background-commun">
+
+ 
+  <a href="{{path("scpi")}}" class="card col text-decoration-none background-commun">
   <h4 class="text-center text-uppercase">scpi</h4>
-    <img src="images/building.jpg"  alt="scpi" style="height:300px;">
+    <img src="images/building.jpg" class="object-fit-cover" alt="scpi" style="height:300px;">
     <div class="card-body">
       <h5 class="card-title text-center border-bottom">L'immobilier sans ses contraintes</h5>
       <p class="card-text"> Permettre à plusieurs investisseurs de regrouper leurs fonds pour acquérir et gérer des biens immobiliers.
       </p>
-      <a href="{{path("scpi")}}"><input type="submit" value="En savoir plus" class="btn bouton"></a>
+      <div class="d-flex justify-content-center"><button class="bouton btn ">En savoir plus</button></div>
     </div>
-  </div>
-  <div class="card col background-commun">
+  </a>
+  
+  <a href="{{path("assuranceVie")}}" class="card col text-decoration-none background-commun">
   <h4 class="text-center text-uppercase">Assurance-Vie</h4>
-    <img src="images/main-sur-pied.jpg" class="card-img-top" alt="assurance vie" style="height:300px;">
+    <img src="images/main-sur-pied.jpg" class="object-fit-cover" alt="assurance vie" style="height:300px;">
     <div class="card-body">
       <h5 class="card-title text-center  border-bottom">Protéger ses proches</h5>
       <p class="card-text">
       Moyen d’épargne à moyen ou long terme qui permet de financer des projets, préparer sa retraite et transmettre son patrimoine.
       </p>
-      <a href="{{path("assuranceVie")}}"><input type="submit" value="En savoir plus" class="btn bouton"></a>
+      <div class="d-flex justify-content-center"><button class="bouton btn ">En savoir plus</button></div>
+      
     </div>
-  </div>
-  <div class="card col  background-commun">
+  </a>
+
+  <a href="{{path("defiscalisation")}}" class="card col text-decoration-none background-commun">
   <h4 class="text-center text-uppercase">Défiscalisation</h4>
-    <img src="images/grand-building.jpg"  alt="defiscalisation" style="height:300px;">
+    <img src="images/proprio.jpg" class="object-fit-cover" alt="defiscalisation" style="height:300px;">
     <div class="card-body">
       <h5 class="card-title text-center border-bottom">Devenir propriétaire grâce à ses impôts</h5>
       <p class="card-text">Via la loi Pinel, Crédit & Finance permet aux particuliers d'investir leurs impôts sur le revenu en investissant dans des logements neufs.</p>
-     <a href="{{path("defiscalisation")}}"><input type="submit" value="En savoir plus" class="btn bouton"></a>
+     <div class="d-flex justify-content-center"><button class="bouton btn ">En savoir plus</button></div>
     </div>
     </div>
   </div>
