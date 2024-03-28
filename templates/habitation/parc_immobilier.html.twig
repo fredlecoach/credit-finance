@@ -13,18 +13,18 @@
     <div class="row mt-5 py-3 justify-content-center bg-secondary-subtle">
     
             <div class="col-4">
-              <form action="" method="get">
+              <form action="{{path("rechercher")}}" method="get">
 
-                <label for="ville" class="fw-bold">Département</label>
+                <label for="departement" class="fw-bold">Département</label>
                 <input type="text" name="departement" id="departement" placeholder="ex : Val de Marne" class="form-control">
 {# 
                 <label for="ville" class="fw-bold">Numéro de Département</label>
                 <input type="text" name="numero_departement" id="numero_departement" placeholder="ex : 94" class="form-control"> #}
         
-                <label for="superficie" id="surface" class="my-1 fw-bold">Superficie (m²) : </label>
-                <input type="number" class="form-control">
+                <label for="superfaceMin" id="surfaceMin" class="my-1 fw-bold">Superface minimum (m²) : </label>
+                <input type="number" class="form-control" id="superficieMin" name="superficieMin">
                     
-                <label class="fw-bold mt-1">Type d logement(s) recherché(s) : </label>
+                <label for="type" class="fw-bold mt-1">Type de logement(s) recherché(s) : </label>
                   <ul class="list-unstyled">
                     <li>
                       <input type="checkbox" name="appartement" id="appartement" checked>
@@ -54,18 +54,22 @@
                 {# <label for="ville" class="fw-bold">Code postal</label>
                 <input type="number" name="code_postal" id="dcode_postal" placeholder="ex : 94000" class="form-control"> #}
                 
-                <label for="loyer" class="fw-bold">Loyer perçus</label>
-                <input type="number" name="loyer" id="loyer" class="form-control" min="500" step="50" placeholder="/mois">
+                <label for="loyerMax" class="fw-bold">Loyer perçus</label>
+                <input type="number" name="loyerMax" id="loyerMax" class="form-control" min="500" step="50" placeholder="/mois">
                 
-                <label for="rentabilité" class="fw-bold my-1">Rentabilité</label>
-                <input type="number" class="form-control" placeholder="%">
+                <label for="rentabiliteMin" class="fw-bold my-1">Rentabilité minimum</label>
+                <input type="number" class="form-control" placeholder="%" id="rentabiliteMin" name="rentabiliteMin">
                 
-                <label for="prix" id="prixAffiche" class="fw-bold">Budget d'achat : </label>
-                <input type="number" name="prix" id="prix" min="30000" max="10000000" step="5000" class="form-control" placeholder="ex : 100000 €">
+                <label for="prixMin" class="fw-bold">Budget min </label>
+                <input type="number" name="prixMin" id="prixMin" min="30000" max="10000000" step="5000" class="form-control" placeholder="ex : 10000 €">
 
+                <label for="prixMax" class="fw-bold">Budget max </label>
+                <input type="number" name="prixMax" id="prixMax" min="30000" max="10000000" step="5000" class="form-control" placeholder="ex : 500000 €">
+                
                 <div class="d-flex justify-content-end">
-                  <a href="{{path('rechercher')}}"></a><input type="submit" value="Rechercher" class="bouton mt-3">
+                  <button type="submit" class="bouton mt-3">Rechercher</button>
                 </div>
+
             </div>
           </form>
     </div>
@@ -80,7 +84,7 @@
         <div class="card  anim background-commun">
           <img src= {{value.image}} class="card-img-top w-100" style="height:250px" alt="photo habitation">
           <div class="card-body">
-            <a href="" class="btn bouton w-100" >Découvrir</a>
+            <a href="{{ path('afficher', {'id': value.id}) }}" class="btn bouton w-100 mb-3" >Découvrir</a>
             <div class="card-text">
               <div class="row">
                 <div class="col-5"><strong>Département :</strong></div>

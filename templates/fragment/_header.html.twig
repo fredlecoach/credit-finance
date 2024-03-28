@@ -1,6 +1,6 @@
 <header>
 <nav class="navbar navbar-expand-lg container navbar-dark d-flex">
-<span class="navbar-brand"><a href="{{path("home")}}"><img src="images/logo_credit-finance.png" alt="logo" style="width:9em"></a></span>
+<span class="navbar-brand"><a href="{{path("home")}}"><img src="{{ asset('images/logo_credit-finance.png') }}" alt="logo" style="width:9em"></a></span>
 <ul class="navbar-nav mx-auto">
   <li class="nav-item px-2"><a href="{{path("home")}}" class="{% if app.request.attributes.get('_route') == 'home' %} active {% endif %} nav-link">Home</a></li>
   <li class="nav-item dropdown ">

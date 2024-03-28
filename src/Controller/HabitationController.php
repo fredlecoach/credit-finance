@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Habitation;
 use App\Form\HabitationType;
 use App\Entity\FormulaireRecherche;
+use App\Model\SearchData;
 use App\Repository\FormulaireRechercheRepository;
 use App\Repository\HabitationRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -12,6 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\SearchType;
 
 class HabitationController extends AbstractController
 {
@@ -24,34 +26,45 @@ class HabitationController extends AbstractController
     // }
 
     #[Route("/parc_immobilier", name:"parc_immobilier")]
-    public function rp(HabitationRepository $habitationRepository) : Response {
+    public function rp(HabitationRepository $habitationRepository, Request $request) : Response {
+
+      // $searchData = new SearchData();//on crée notre instance de la class SearchData
+      // $form = $this->createForm(SearchType::class, $searchData);//on va créer le formulaire
+
+      // $form->handleRequest($request);//On récupère et gère les requêtes envoyées par le formulaire
+      // if($form->isSubmitted() && $form->isValid()) {
+      //   dd($searchData);
+      // }
+
       // On récupère les logements de type résidence principale
       $habitation = $habitationRepository->findAll();
       return $this->render("habitation/parc_immobilier.html.twig", ["habitation" => $habitation]);
     }
+
+
     
 // *************************************************************************************************
-#[route("/rechercher", name: "rechercher")]
-public function search(Request $request, FormulaireRechercheRepository $formulaireRechercheRepository)   : Response 
-{
-    $departement = $request->query->get('departement');
-    $type = $request->query->get('type');
-    $surfaceMin = $request->query->get('surfaceMin');
-    $prixMin = $request->query->get('prixMin');
-    $prixMax = $request->query->get('prixMax');
-    $loyerMin = $request->query->get('loyerMin');
-    $loyerMax = $request->query->get('loyerMax');
-    $rentabiliteMin = $request->query->get('rentabiliteMin');
-    // Récupérez d'autres critères de recherche depuis le formulaire
+// #[route("/rechercher", name: "rechercher")]
+// public function search(Request $request, FormulaireRechercheRepository $formulaireRechercheRepository)   : Response 
+// {
+//     $departement = $request->query->get('departement');
+//     $type = $request->query->get('type');
+//     $surfaceMin = $request->query->get('surfaceMin');
+//     $prixMin = $request->query->get('prixMin');
+//     $prixMax = $request->query->get('prixMax');
+//     $loyerMin = $request->query->get('loyerMin');
+//     $loyerMax = $request->query->get('loyerMax');
+//     $rentabiliteMin = $request->query->get('rentabiliteMin');
+//     // Récupérez d'autres critères de recherche depuis le formulaire
 
-    $habitation = $this->getDoctrine()
-        ->getRepository(FormulaireRecherche::class)
-        ->findAppartementsByCriteria($prixMax, $departement, $type, $surfaceMin, $prixMin, $prixMax, $loyerMin, $loyerMax, $rentabiliteMin /*, autres critères */);
+//     $habitation = $this->getDoctrine()
+//         ->getRepository(FormulaireRecherche::class)
+//         ->findAppartementsByCriteria($prixMax, $departement, $type, $surfaceMin, $prixMin, $prixMax, $loyerMin, $loyerMax, $rentabiliteMin /*, autres critères */);
 
-    return $this->render('recherche/resultatRecherche.html.twig', [
-        'habitation' => $habitation,
-    ]);
-}
+//     return $this->render('recherche/resultatRecherche.html.twig', [
+//         'habitation' => $habitation,
+//     ]);
+// }
 
   
 // ************GESTION**************************
