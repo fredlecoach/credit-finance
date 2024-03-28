@@ -138,7 +138,7 @@ class HabitationType extends AbstractType
                         ]) 
             ->add('surface', NumberType::class, ['attr'=> ["class"=> 'form-control mb-2']])
             ->add('prix', NumberType::class, ['attr'=> ["class"=> 'form-control mb-2']])
-            ->add('loyer', NumberType::class, ['attr'=> ["class"=> 'form-control mb-2']])
+            ->add('loyer', NumberType::class, ['label'=>'loyers perçus / mois', 'attr'=> ["class"=> 'form-control mb-2']])
             ->add('rentabilite', NumberType::class, ['attr'=> ["class"=> 'form-control mb-2']])
             ->add('image', TextType::class, ['attr' => ["class" => "form-control mb-2"],
                                              'data' => "images/"])

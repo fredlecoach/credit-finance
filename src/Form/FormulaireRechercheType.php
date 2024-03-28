@@ -20,6 +20,7 @@ class FormulaireRechercheType extends AbstractType
         $builder
           
             ->add('departement', ChoiceType::class, ['required' => false, 
+                                                     'label' => 'Département ',
                                                     "placeholder"=> "sélectionner un département", 
                                                     'choices' => ["01 - Ain - Bourg-en-Bresse"=>"01 - Ain -             Bourg-en-Bresse",
                                                                     "02 - Aisne - Laon" => "02 - Aisne - Laon"  ,
@@ -124,9 +125,9 @@ class FormulaireRechercheType extends AbstractType
                                                                     "976 - Mayotte - Mamoudzou"=> "976 - Mayotte - Mamoudzou"],
                                                     "attr"=>["class"=> "form-control"]])
 
-            ->add('type',  ChoiceType::class,  ['label' => 'Type d\'habitation',
+            ->add('type',  ChoiceType::class,  ['label' => 'Type de biens',
                                                 'required' => false, 
-                                                'placeholder' => 'Cliquer pour sélectionner : maison, appartement, duplex etc...',
+                                                'placeholder' => 'cliquer pour sélectionner : maison, appartement, duplex etc...',
                                                 'choices' => ['Appartement' => 'Appartement',
                                                               'Maison' => 'Maison',
                                                               'Duplex' => 'Duplex',
@@ -140,17 +141,17 @@ class FormulaireRechercheType extends AbstractType
                                                     "attr"=>["placeholder"=> "m²", 
                                                      "class"=> "form-control"]])
 
-            ->add('prixMin', NumberType::class, ["label"=> "Budget minimum",
+            ->add('prixMin', NumberType::class, ["label"=> "Budget d'achat minimum",
                                                  "required" => false,
                                                  "attr"=>["placeholder"=> "valeur minimum en €", 
                                                      "class"=> "form-control"]])
 
-            ->add('prixMax', NumberType::class, ["label"=> "Budget maximum", "required"=>false,
+            ->add('prixMax', NumberType::class, ["label"=> "Budget d'achat maximum", "required"=>false,
                                                  "attr"=>["placeholder"=> "valeur maximum en €", 
                                                  "class"=> "form-control"]])
 
             ->add('loyerMin', NumberType::class, ["required"=>false,
-                                                  "label"=>"Loyer minimum / mois",
+                                                  "label"=>"Loyer minimum perçu / mois",
                                                   "attr"=>["placeholder"=> "ex : 500€", 
                                                            "class"=> "form-control"]])
 
