@@ -4,6 +4,6 @@ controllers:
         namespace: App\Controller
     type: attribute
 
-afficher_tranche_prix:
-    path: /ajout_habitation
-    controller: App\Controller\HabitationController::afficherTranchePrix
+rechercher:
+    path: /rechercher
+    controller: App\Controller\rechercheController::resultatRecherche

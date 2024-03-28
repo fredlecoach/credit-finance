@@ -2,18 +2,19 @@
 
 namespace App\Controller;
 
+use App\Model\SearchData;
 use App\Entity\Habitation;
 use App\Form\HabitationType;
 use App\Entity\FormulaireRecherche;
-use App\Model\SearchData;
-use App\Repository\FormulaireRechercheRepository;
+use App\Form\FormulaireRechercheType;
 use App\Repository\HabitationRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\FormulaireRechercheRepository;
 use Symfony\Component\Form\Extension\Core\Type\SearchType;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HabitationController extends AbstractController
 {
@@ -26,23 +27,26 @@ class HabitationController extends AbstractController
     // }
 
     #[Route("/parc_immobilier", name:"parc_immobilier")]
-    public function rp(HabitationRepository $habitationRepository, Request $request) : Response {
+    public function rp(HabitationRepository $hr, Request $request) : Response {
 
-      // $searchData = new SearchData();//on crée notre instance de la class SearchData
-      // $form = $this->createForm(SearchType::class, $searchData);//on va créer le formulaire
+      $form = $this->createForm(FormulaireRechercheType::class);//on spécifie quel formulaire on utilise
 
-      // $form->handleRequest($request);//On récupère et gère les requêtes envoyées par le formulaire
-      // if($form->isSubmitted() && $form->isValid()) {
-      //   dd($searchData);
-      // }
+      $form->handleRequest($request);//on récupère la requête
+      
+      //si le formulaire est soumis et qu'il est valide, on peut y accéder
+      if ($form->isSubmitted() && $form->isValid()) {  
+          // $habitation = $hr->findOneBy(['id' => $id]);
+          $data = $form->getData();//on récupère les données du formulaire
+          // Gérer la soumission du formulaire
+          // Par exemple, redirection vers une autre page avec les paramètres de recherche
+          return $this->render('recherche/resultatRecherche.html.twig', $data);//on retourne les données vers la vue
+      }
 
       // On récupère les logements de type résidence principale
-      $habitation = $habitationRepository->findAll();
-      return $this->render("habitation/parc_immobilier.html.twig", ["habitation" => $habitation]);
-    }
-
-
-    
+      $habitation = $hr->findAll();
+      return $this->render("habitation/parc_immobilier.html.twig", ["habitation" => $habitation, 'form'=>$form->createView()]);
+        }
+        
 // *************************************************************************************************
 // #[route("/rechercher", name: "rechercher")]
 // public function search(Request $request, FormulaireRechercheRepository $formulaireRechercheRepository)   : Response 
