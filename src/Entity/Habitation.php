@@ -47,8 +47,8 @@ class Habitation
     #[ORM\Column(length: 100)]
     private ?string $departement = null;
 
-    #[ORM\Column]
-    private ?int $numero_departement = null;
+    // #[ORM\Column]
+    // private ?int $numero_departement = null;
 
     public function getId(): ?int
     {
@@ -187,15 +187,15 @@ class Habitation
         return $this;
     }
 
-    public function getNumeroDepartement(): ?int
-    {
-        return $this->numero_departement;
-    }
+    // public function getNumeroDepartement(): ?int
+    // {
+    //     return $this->numero_departement;
+    // }
 
-    public function setNumeroDepartement(int $numero_departement): static
-    {
-        $this->numero_departement = $numero_departement;
+    // public function setNumeroDepartement(int $numero_departement): static
+    // {
+    //     $this->numero_departement = $numero_departement;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 }
