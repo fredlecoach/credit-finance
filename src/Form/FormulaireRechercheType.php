@@ -140,20 +140,22 @@ class FormulaireRechercheType extends AbstractType
                                                     "attr"=>["placeholder"=> "m²", 
                                                      "class"=> "form-control"]])
 
-            ->add('prixMin', NumberType::class, ["label"=> "Prix minimum",
+            ->add('prixMin', NumberType::class, ["label"=> "Budget minimum",
                                                  "required" => false,
                                                  "attr"=>["placeholder"=> "valeur minimum en €", 
                                                      "class"=> "form-control"]])
 
-            ->add('prixMax', NumberType::class, ["label"=> "Prix maximum", "required"=>false,
+            ->add('prixMax', NumberType::class, ["label"=> "Budget maximum", "required"=>false,
                                                  "attr"=>["placeholder"=> "valeur maximum en €", 
                                                  "class"=> "form-control"]])
 
             ->add('loyerMin', NumberType::class, ["required"=>false,
-                                                    "attr"=>["placeholder"=> "ex : 500€", 
-                                                     "class"=> "form-control"]])
+                                                  "label"=>"Loyer minimum / mois",
+                                                  "attr"=>["placeholder"=> "ex : 500€", 
+                                                           "class"=> "form-control"]])
 
             ->add('rentabiliteMin', NumberType::class, ["required"=>false,
+                                                        "label"=> "Rentabilité minimale annuelle",
                                                         "attr"=>["placeholder"=> "ex : 5%", 
                                                         "class"=> "form-control"]])
 
