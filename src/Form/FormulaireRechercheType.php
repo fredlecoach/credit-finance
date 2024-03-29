@@ -132,7 +132,7 @@ class FormulaireRechercheType extends AbstractType
                                                               'Maison' => 'Maison',
                                                               'Duplex' => 'Duplex',
                                                               'Studio' => 'Studio',
-                                                              'villa' => 'Villa'],
+                                                              'Villa' => 'Villa'],
                                                 'attr' => ['class' => 'form-control'],
             ])
 
@@ -160,7 +160,7 @@ class FormulaireRechercheType extends AbstractType
                                                         "attr"=>["placeholder"=> "ex : 5%", 
                                                         "class"=> "form-control"]])
 
-            ->add("creer" , SubmitType::class , ["label"=> isset($options["label"]) ? $options["label"]  : "Rechercher" , "attr" => [ "class" => "btn bouton mt-3 px-3" ]])
+            ->add("creer" , SubmitType::class , ["label"=> isset($options["label"]) ? $options["label"]  : "Rechercher" , "attr" => [ "class" => "btn bouton size-btn mt-3 px-3" ]])
         ;
     }
 

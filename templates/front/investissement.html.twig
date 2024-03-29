@@ -5,7 +5,7 @@
 {% block body %}
 
 <div class="container contour bg-light">
-  <h1 class="display-5 text-center text-capitalize mt-3">L'investissement locatif clef en main</h1>
+  <h1 class="display-5 text-center text-capitalize mt-3" id="retour">L'investissement locatif clef en main</h1>
     <h5 class="color-title text-center text-uppercase">Une opportunité financière pour tous ! </h5>
     <section class="offset-1 mt-4">
         
@@ -19,10 +19,12 @@
               <li><h5><i class="bi bi-calculator text-primary"></i> Avantages fiscaux : déduction des intérêts
               hypothécaires et des frais d’entretien.</h5></li>
             </ul>
-            <input type="submit" class="btn bouton py-2 fs-5 shadow" value="Nos projets immobiliers">
+            <div class="d-flex justify-content-center">
+            <input type="submit" class="btn bouton py-2 fs-5 shadow " value="Nos projets immobiliers">
+            </div>
         </div>
-        <div class="col apparaitre">
-        <img src="images/building-container.jpg" alt="investissement locatif" class="w-100 p-3">
+        <div class="col apparaitre responsive-img-invest">
+        <img src="images/building-container-compressed.jpg" alt="investissement locatif" class="w-100 p-3">
         </div>
        </div>
     </section>
@@ -42,10 +44,13 @@
             options de financement</h5></li><br>
             <li><h5>Simplifiez votre expérience en confiant la gestion locative à des professionnels qualifiés</h5></li>
           </ul>
-          <input type="submit" class="btn bouton py-2 fs-5 shadow" value="Nous contacter">
+          <div class="d-flex justify-content-center">
+            <input type="submit" class="btn bouton py-2 fs-5 shadow" value="Nous contacter">
+          </div>
+          
         </div>
-        <div class="col apparaitre">
-          <img src="images/equipe_femme.jpg" alt="equipe" class="w-100 p-3">
+        <div class="col apparaitre responsive-img-invest">
+          <img src="images/equipe_femme-compressed.jpg" alt="equipe" class="w-100 p-3">
         </div>
       </div>    
     </section>
@@ -59,7 +64,7 @@
             Le taux auquel vous empruntez est directement lié au prix que vous coûtera votre emprunt. Négocier 0,15% de moins sur le taux d’un prêt peut rapidement représenter des dizaines de milliers d’euros économisés, en particulier si votre emprunt court sur plus de 20 ans. Les conditions pour obtenir les meilleurs taux sont subjectives, et relèvent autant de relation de confiance avec la banque auprès de laquelle vous empruntez que de l’analyse pure et simple de votre situation. En tant que particulier, vous n’êtes pas nécessairement armé pour obtenir le meilleur taux, et donc le meilleur prix, pour votre emprunt. Crédit et Finance s’occupe de trouvez le meilleur taux auquel vous pouvez prétendre, en jouant sur toutes ses expertises
           </p>
         </div>
-        <div class="col bg-light py-1 mx-4 d-flex align-items-center justify-content-center">
+        <div class="col bg-light py-1 d-flex align-items-center justify-content-center responsive-taux">
           <ul class="list-unstyled">
             <li><h4><i class="bi bi-currency-euro fs-2 text-success"></i> Taux fixe sur 10 ans -> 1.75% *</h4></li>
             <li><h4><i class="bi bi-hourglass-split fs-2 text-warning"></i> Délai de réponse -> 24H max</h4></li>
@@ -109,6 +114,10 @@
       </div>
 
     </section>
+
+    <div class="d-flex justify-content-center">
+      <a href="#retour"><i class="bi bi-arrow-up-circle-fill fs-2 arrow" title="retour haut de page"></i></a>
+    </div>
 
 </div>
 

@@ -13,17 +13,17 @@
       </tr>
     </table>
 
-  <table class="table table-hover text-center border mb-5">
+  <table class="table table-hover text-center border mb-5 ">
     <thead class="text-capitalize ">
       {# <td class="fw-bold border bg-light text-uppercase">#</td> #}
       <td class="fw-bold border bg-light text-uppercase">image</td>
-      <td class="fw-bold border bg-light text-uppercase">Département</td>
+      <td class="fw-bold border bg-light text-uppercase responsive-table">Département</td>
       {# <td class="fw-bold border bg-light text-uppercase">Code postal</td> #}
       <td class="fw-bold border bg-light text-uppercase">Ville</td>
       <td class="fw-bold border bg-light text-uppercase">type</td>
-      <td class="fw-bold border bg-light text-uppercase">surface</td>
+      <td class="fw-bold border bg-light text-uppercase responsive-table">surface</td>
       <td class="fw-bold border bg-light text-uppercase">prix</td>
-      <td class="fw-bold border bg-light text-uppercase">loyer</td>
+      <td class="fw-bold border bg-light text-uppercase responsive-table">loyer</td>
       {# <td class="fw-bold border bg-light text-uppercase">rentabilité</td> #}
       {# <td class="fw-bold border bg-light text-uppercase">date de création</td> #}
       <td class="fw-bold border bg-light text-uppercase">Action</td>
@@ -33,13 +33,13 @@
         <tr>
           {# <th class="bg-light text-capitalize"> {{value.id}}  </th> #}
           <td><img src="{{value.image}}" alt="range rover" class="w-100 img-fluid object-fit-cover" style="height:100px"></td>
-          <td class=" text-capitalize"> {{value.departement}} </td>
+          <td class=" text-capitalize responsive-table"> {{value.departement}} </td>
           {# <td>{{value.code_postal}}</td> #}
           <td class=" text-capitalize fw-bold border-bottom">{{value.ville}}</td>
           <td class=" text-capitalize"> {{value.type}} </td>
-          <td class=" text-capitalize border-bottom"> {{value.surface}} </td>
+          <td class=" text-capitalize border-bottom responsive-table"> {{value.surface}} </td>
           <td class=" text-capitalize fw-bold"> {{value.prix}} </td>
-          <td class=" text-capitalize border-bottom"> {{value.loyer}} </td>
+          <td class=" text-capitalize border-bottom responsive-table"> {{value.loyer}} </td>
           {# <th class="fw-bold bg-light text-capitalize"> {{value.rentabilité}} </th> #}
           {# <th class="fw-bold bg-light text-capitalize"> {{value.date_creation}} </th> #}
           <td>
@@ -58,7 +58,7 @@
     </tfoot> #}
   </table>
    <div class="d-flex justify-content-center">
-      <a href="#haut"><i class="bi bi-arrow-up-circle-fill fs-2 arrow"></i></a>
+      <a href="#haut"><i class="bi bi-arrow-up-circle-fill fs-2 arrow" title="retour haut de page"></i></a>
     </div>
 
 </div>

@@ -8,7 +8,7 @@
 <h1 class="text-center display-5 text-capitalize">Détails de l'habitation</h1>
 
 <div class="card mb-3 mt-5">
-{% for value in habitation %}
+{% for key, value in habitation %}
     <img src="{{ asset(value.image) }}" class="card-img-top" alt="">
     
     <table class="table table-striped mt-4">

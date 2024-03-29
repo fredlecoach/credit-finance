@@ -38,7 +38,7 @@
 
 /* investissement locatif */
 .background-invest-loc{
-  background-image: url("images/invest-locatif.jpg");
+  background-image: url("images/invest-locatif-compressed.jpg");
   border-radius: 20px;
   height: 400px;
   background-position: center;
@@ -51,7 +51,7 @@
 /* placements */
 
 .background-placements{
-  background-image: url("images/placements.jpg");
+  background-image: url("images/placements-compressed.jpg");
   border-radius: 20px;
   height: 400px;
   background-position: center;
@@ -85,9 +85,9 @@
 /* crédit */
 
 .background-credit{
-  background-image: url("images/credit-rachat.jpg");
+  background-image: url("images/credit-rachat-compressed.jpg");
   border-radius: 20px;
-  height: 190px;
+  height: 200px;
   background-position: center;
   background-size: cover;
   opacity: 0.7;
@@ -114,9 +114,9 @@
 /* parrainage */
 
 .background-parrainage{
-  background-image: url("images/piggy-bank-2889042_1280.jpg");
+  background-image: url("images/piggy-bank-compressed.jpg");
   border-radius: 20px;
-  height: 190px;
+  height: 200px;
   background-position: center;
   background-size: cover;
   opacity: 0.7;
@@ -138,11 +138,13 @@
   justify-content: center; 
   top: 95px ; 
 }
+
+
 /******************** css 2ème row *****************/
 
 /* impots */
 .background-impots{
-  background-image: url("images/money-2724235_1280.jpg");
+  background-image: url("images/reduction-impots-compressed.jpg");
   border-radius: 20px;
   height: 290px;
   background-position: center;
@@ -153,7 +155,7 @@
 /* simuation */
 
 .background-simulation{
-  background-image: url("images/success-6595539_1280.png");
+  background-image: url("images/simuler-mensualites-compressed.png");
   border-radius: 20px;
   height: 290px;
   background-position: center;
@@ -176,7 +178,7 @@
 /* residence principale */
 
 .background-proprietaire{
-  background-image: url("images/batiment-haussmanien.jpg");
+  background-image: url("images/batiment-haussmanien-compressed.jpg");
   border-radius: 20px;
   height: 290px;
   background-position: center;
@@ -220,6 +222,7 @@
   to{opacity: .5}
   to{opacity: 1}  
 }
+
 
 .apparaitre{
   animation: apparition 3s linear forwards; 
