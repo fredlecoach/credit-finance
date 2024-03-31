@@ -146,7 +146,7 @@ class HabitationType extends AbstractType
                 'widget' => 'single_text',
             ])
 
-            ->add("creer" , SubmitType::class , ["label"=> isset($options["label"]) ? $options["label"]  : "Ajouter" , "attr" => [ "class" => "btn bouton col-6 mt-2 px-3" ]])
+            ->add("creer" , SubmitType::class , ["label"=> isset($options["label"]) ? $options["label"]  : "Ajouter" , "attr" => [ "class" => "btn bouton col-6 mt-2 px-3 responsive-btn-modif" ]])
         ;
     }
 
