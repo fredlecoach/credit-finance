@@ -45,4 +45,45 @@ class HabitationRepository extends ServiceEntityRepository
     //            ->getOneOrNullResult()
     //        ;
     //    }
+     // Méthode pour rechercher des habitations en fonction des critères spécifiés
+     public function findByCriteria($criteria)
+     {
+         // Exemple de logique de recherche - à adapter selon vos besoins
+         $qb = $this->createQueryBuilder('h');
+ 
+         if (!empty($criteria['departement'])) {
+             $qb->andWhere('h.departement = :departement')
+                 ->setParameter('departement', $criteria['departement']);
+         }
+
+         if (!empty($criteria['type'])) {
+            $qb->andWhere('h.type = :type')
+                ->setParameter('type', $criteria['type']);
+        }
+
+        if (!empty($criteria['superficie'])) {
+            $qb->andWhere('h.superficie >= :min_superficie')
+                ->setParameter('min_superficie', $criteria['superficie']);
+        }
+
+        if (!empty($criteria['prix'])) {
+            $qb->andWhere('h.prix <= :max_prix')
+                ->setParameter('max_prix', $criteria['prix']);
+        }
+
+        if (!empty($criteria['loyer'])) {
+            $qb->andWhere('h.loyer <= :max_loyer')
+                ->setParameter('max_loyer', $criteria['loyer']);
+        }
+
+        if (!empty($criteria['rentabilite'])) {
+            $qb->andWhere('h.rentabilite >= :min_rentabilite')
+                ->setParameter('min_rentabilite', $criteria['rentabilite']);
+        }
+
+ 
+         // Ajoutez d'autres critères selon vos besoins
+ 
+         return $qb->getQuery()->getResult();
+     }
 }
